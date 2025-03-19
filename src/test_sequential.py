@@ -9,8 +9,8 @@ import glob
 import time
 import random
 
-import torch_npu
-from torch_npu.contrib import transfer_to_npu
+# import torch_npu
+# from torch_npu.contrib import transfer_to_npu
 
 from tqdm import tqdm
 import numpy as np
@@ -291,5 +291,5 @@ def main_worker(local_rank, args):
 
 
 if __name__ == "__main__":
-    torch_npu.npu.set_compile_mode(jit_compile=False)
+    # torch_npu.npu.set_compile_mode(jit_compile=False)
     main()

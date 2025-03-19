@@ -11,7 +11,7 @@ from tqdm import tqdm
 import torch
 import numpy as np
 import os
-from torch.utils.data.distributed import DistributedSampler
+# from torch.utils.data.distributed import DistributedSampler
 from copy import deepcopy
 
 from transformers import T5Tokenizer, T5TokenizerFast
@@ -526,10 +526,11 @@ def get_loader(args, task_list, sample_numbers, split='toys', mode='train',
         split=split,
     )
 
-    if distributed:
-        sampler = DistributedSampler(dataset)
-    else:
-        sampler = None
+    # if distributed:
+    #     sampler = DistributedSampler(dataset)
+    # else:
+    #     sampler = None
+    sampler = None
 
     if mode == 'train':
         loader = DataLoader(

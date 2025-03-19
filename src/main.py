@@ -6,8 +6,8 @@ import logging
 from datetime import datetime
 from packaging import version
 
-import torch_npu
-from torch_npu.contrib import transfer_to_npu
+# import torch_npu
+# from torch_npu.contrib import transfer_to_npu
 
 from tqdm import tqdm
 import numpy as np
@@ -355,7 +355,7 @@ def main_worker(gpu, args):
 
 
 if __name__ == "__main__":
-    torch_npu.npu.set_compile_mode(jit_compile=False)
+    # torch_npu.npu.set_compile_mode(jit_compile=False)
     cudnn.benchmark = True
     args = parse_args()
     ngpus_per_node = torch.cuda.device_count()
